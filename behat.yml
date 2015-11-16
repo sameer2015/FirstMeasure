@@ -1,0 +1,27 @@
+default:
+  paths:
+    features: "features"
+    bootstrap: %behat.paths.base%/features/bootstrap
+  context:
+      parameters:
+          javascript_session: selenium
+          browser: chrome 
+          show_cmd: open %s
+  extensions:
+    OrangeDigital\BusinessSelectorExtension\Extension:
+      urlFilePath: %behat.paths.features%/tokens/default.token
+      selectorFilePath: %behat.paths.features%/tokens/default.token
+      assetPath: path
+      timeout: 30
+      contexts:
+        UIBusinessSelector: ~
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: 
+        browser: firefox
+      base_url: "https://pfizerdigital:Pfizerbt123@pffirstmeasdev3.prod.acquia-sites.com/"
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      subcontexts:
+        paths:
+          - "/Users/sameersawant/behat/PfizerBehatSteps"
