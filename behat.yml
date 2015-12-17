@@ -4,7 +4,7 @@ default:
     bootstrap: %behat.paths.base%/features/bootstrap
   context:
       parameters:
-          javascript_session: selenium
+          javascript_session: selenium2
           browser: chrome 
           show_cmd: open %s
   extensions:
@@ -18,8 +18,8 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: 
-        browser: firefox
-      base_url: "https://pfizerdigital:Pfizerbt123@pffirstmeasdev3.prod.acquia-sites.com/"
+        browser: chrome
+      base_url: "https://pfizerdigital:Pfizerbt456@pffirstmeasdev3.prod.acquia-sites.com/"
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       subcontexts:
